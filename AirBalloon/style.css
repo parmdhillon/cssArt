@@ -1,0 +1,203 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  text-align: center;
+  background: #8e6fff;
+  overflow: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*::after,
+*::before {
+  content: '';
+}
+
+.cloud {
+  position: absolute;
+  width: 250px;
+  height: 90px;
+  background: #eceff1;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 100px;
+  animation: cloud 5s linear 0s infinite alternate;
+}
+
+@keyframes cloud {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+.cloud.pos1 {
+  top: 100px;
+  left: 50px;
+}
+.cloud.pos2 {
+  animation-direction: alternate-reverse;
+  top: 150px;
+  right: 100px;
+  z-index: 3;
+}
+
+.cloud::after,
+.cloud::before {
+  position: absolute;
+  display: inline-block;
+  background: inherit;
+  border-radius: inherit;
+}
+
+.cloud::after {
+  width: 80px;
+  height: 80px;
+  top: -30px;
+  left: 40px;
+}
+.cloud::before {
+  width: 120px;
+  height: 120px;
+  top: -50px;
+  left: 90px;
+}
+
+.ballon-container {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  animation: ballon 3s ease-in-out 0s infinite alternate;
+}
+
+.ballon {
+  position: relative;
+  width: 320px;
+  height: 360px;
+  background: #fff;
+  border-radius: 49% 51% 50% 50% / 38% 40% 60% 62%;
+  background: linear-gradient(
+    90deg,
+    rgba(252, 186, 56, 1) 0%,
+    rgba(252, 186, 56, 1) 50%,
+    rgba(112, 35, 255, 1) 50%,
+    rgba(112, 35, 255, 1) 100%
+  );
+}
+
+.ballon > .stripe {
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  height: 360px;
+  border-radius: 49% 51% 50% 50% / 38% 40% 60% 62%;
+}
+
+.ballon > .stripe:nth-child(1) {
+  background: #fff !important;
+  width: 80%;
+}
+.ballon > .stripe:nth-child(2) {
+  background: linear-gradient(
+    270deg,
+    rgba(252, 186, 56, 1) 0%,
+    rgba(252, 186, 56, 1) 50%,
+    rgba(112, 35, 255, 1) 50%,
+    rgba(112, 35, 255, 1) 100%
+  );
+  width: 50%;
+}
+.ballon > .stripe:nth-child(3) {
+  background: #fff;
+  width: 25%;
+}
+
+.rope-box {
+  position: absolute;
+  background-color: #8e6fff;
+  width: 200px;
+  height: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  overflow: hidden;
+}
+.rope-box > .rope {
+  top: -5px;
+  width: 5px;
+  height: 100%;
+  display: block;
+  position: absolute;
+  background: #000;
+}
+.rope-box > .rope:nth-child(1) {
+  left: 35px;
+  transform: rotate(10deg);
+}
+.rope-box > .rope:nth-child(2) {
+  left: 40px;
+  transform: rotate(-10deg);
+}
+.rope-box > .rope:nth-child(3) {
+  left: 50px;
+  transform: rotate(10deg);
+}
+.rope-box > .rope:nth-child(4) {
+  right: 35px;
+  transform: rotate(-10deg);
+}
+.rope-box > .rope:nth-child(5) {
+  right: 40px;
+  transform: rotate(10deg);
+}
+.rope-box > .rope:nth-child(6) {
+  right: 50px;
+  transform: rotate(-10deg);
+}
+
+.basket {
+  position: absolute;
+  width: 140px;
+  height: 70px;
+  bottom: -92px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  border-radius: 0px 0px 10px 10px;
+  overflow: hidden;
+}
+.dots-container {
+  top: -13px;
+  height: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}
+.dots {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  background: #7023ff;
+}
+.dots:nth-child(even) {
+  background: #fcba38;
+}
+
+@keyframes ballon {
+  from {
+    top: 40%;
+  }
+  to {
+    top: 45%;
+  }
+}
